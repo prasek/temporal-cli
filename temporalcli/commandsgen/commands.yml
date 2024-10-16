@@ -195,10 +195,9 @@ commands:
       - name: no-json-shorthand-payloads
         type: bool
         description: Raw payload output, even if the JSON option was used.
-      # not yet supported
-      #- name: command-timeout
-      #  type: duration
-      #  description: Timeout for the span of a command.
+      - name: command-timeout
+        type: duration
+        description: Timeout for the span of a command.
 
   - name: temporal activity
     summary: Complete or fail an Activity
@@ -927,7 +926,7 @@ commands:
     description: |
       These commands manage Nexus resources.
 
-      nexus commands follow this syntax:
+      Nexus commands follow this syntax:
 
       ```
       temporal operator nexus [command] [subcommand] [options]
@@ -949,10 +948,8 @@ commands:
     description: |
       Create a Nexus Endpoint on the Server.
 
-      A Nexus Endpoint name is used in Workflow code to invoke Nexus Operations.  The
-      endpoint target may either be a Worker, in which case `--target-namespace` and
-      `--target-task-queue` must both be provided, or an external URL, in which case
-      `--target-url` must be provided.
+      A Nexus Endpoint name is used in Workflow code to invoke Nexus Operations.
+      The endpoint target may either be a Worker, in which case `--target-namespace` and `--target-task-queue` must both be provided, or an external URL, in which case `--target-url` must be provided.
 
       This command will fail if an endpoint with the same name is already registered.
 
@@ -1002,10 +999,8 @@ commands:
     description: |
       Update an existing Nexus Endpoint on the Server.
 
-      A Nexus Endpoint name is used in Workflow code to invoke Nexus Operations.  The
-      endpoint target may either be a Worker, in which case `--target-namespace` and
-      `--target-task-queue` must both be provided, or an external URL, in which case
-      `--target-url` must be provided.
+      A Nexus Endpoint name is used in Workflow code to invoke Nexus Operations.
+      The endpoint target may either be a Worker, in which case `--target-namespace` and `--target-task-queue` must both be provided, or an external URL, in which case `--target-url` must be provided.
 
       The endpoint is patched; existing fields for which flags are not provided are
       left as they were.
